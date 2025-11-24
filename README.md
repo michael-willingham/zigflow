@@ -195,6 +195,12 @@ Made with [contrib.rocks](https://contrib.rocks).
 
 ---
 
+## ⭐️ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=mrsimonemms/zigflow&type=date&legend=top-left)](https://www.star-history.com/#mrsimonemms/zigflow&type=date&legend=top-left)
+
+---
+
 ## 🪪 License
 
 Distributed under the [Apache-2.0](./LICENSE) license
