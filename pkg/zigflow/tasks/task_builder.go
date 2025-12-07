@@ -108,6 +108,11 @@ func (d *builder[T]) ShouldRun(state *utils.State) (bool, error) {
 // Factory to create a TaskBuilder instance, or die trying
 func NewTaskBuilder(taskName string, task model.Task, temporalWorker worker.Worker, doc *model.Workflow) (TaskBuilder, error) {
 	switch t := task.(type) {
+	case *model.CallFunction:
+		if t.Call == customCallFunctionActivity {
+			return NewCallActivityTaskBuilder(temporalWorker, t, taskName, doc)
+		}
+		return nil, fmt.Errorf("unsupported call type '%s' for task '%s'", t.Call, taskName)
 	case *model.CallHTTP:
 		return NewCallHTTPTaskBuilder(temporalWorker, t, taskName, doc)
 	case *model.DoTask:
@@ -137,6 +142,7 @@ func NewTaskBuilder(taskName string, task model.Task, temporalWorker worker.Work
 
 // Ensure the tasks meets the TaskBuilder type
 var (
+	_ TaskBuilder = &CallActivityTaskBuilder{}
 	_ TaskBuilder = &CallHTTPTaskBuilder{}
 	_ TaskBuilder = &DoTaskBuilder{}
 	_ TaskBuilder = &ForTaskBuilder{}
