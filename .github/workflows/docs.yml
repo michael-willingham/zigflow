@@ -9,6 +9,11 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      deploy:
+        type: boolean
+        description: Trigger deployment
+        default: false
 defaults:
   run:
     shell: bash
@@ -50,7 +55,7 @@ jobs:
 
   deploy:
     needs: build
-    if: needs.build.outputs.is_tag == 'true'
+    if: needs.build.outputs.is_tag == 'true' || inputs.deploy
     permissions:
       pages: write
       id-token: write
