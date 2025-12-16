@@ -14,7 +14,7 @@ For ease, this example uses the development server bundled with the
 temporal server start-dev
 ```
 
-## How does Zigflow and Temporal
+## How does Zigflow work with Temporal?
 
 A Temporal-enabled application can be thought of as three parts.
 
