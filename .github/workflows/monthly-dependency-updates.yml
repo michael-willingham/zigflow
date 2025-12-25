@@ -51,4 +51,5 @@ jobs:
           branch: chore/monthly-deps
           delete-branch: true
           labels: dependencies
+          signoff: true
           token: ${{ secrets.MONTHLY_UPDATE_TOKEN }}
