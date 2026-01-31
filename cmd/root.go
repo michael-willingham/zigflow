@@ -313,10 +313,7 @@ func init() {
 		viper.GetString("temporal_api_key"), "API key for Temporal authentication",
 	)
 	// Hide the default value to avoid spaffing the API to command line
-	apiKey := rootCmd.Flags().Lookup("temporal-api-key")
-	if s := apiKey.Value; s.String() != "" {
-		apiKey.DefValue = "***"
-	}
+	gh.HideCommandOutput(rootCmd, "temporal-api-key")
 
 	rootCmd.Flags().StringVar(
 		&rootOpts.TemporalMTLSCertPath, "tls-client-cert-path",
