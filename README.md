@@ -165,7 +165,7 @@ format.
 
 <a href="https://github.com/mrsimonemms/zigflow/graphs/contributors">
   <img alt="Contributors"
-    src="https://contrib.rocks/image?repo=mrsimonemms/zigflow&v=1770609237" />
+    src="https://contrib.rocks/image?repo=mrsimonemms/zigflow&v=1771213952" />
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
